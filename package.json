@@ -1,0 +1,24 @@
+{
+  "name": "readme-creator",
+  "version": "1.0.0",
+  "description": "create a readme file by answering a series of questions regarding your application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjenkins63/README-creator.git"
+  },
+  "author": "Brian Jenkins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bjenkins63/README-creator/issues"
+  },
+  "homepage": "https://github.com/bjenkins63/README-creator#readme",
+  "keywords": [],
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  },
+  "devDependencies": {}
+}

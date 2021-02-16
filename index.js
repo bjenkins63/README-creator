@@ -1,33 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateHTML = (answers) =>
-  `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <title>Document</title>
-  <link rel="stylesheet" type="text/css"href="styles.css">
-</head>
-<body>
-  <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Hi! My name is ${answers.name}</h1>
-    <p class="lead">I am from ${answers.location}.</p>
-    <p class="lead">I golf at ${answers.hobbyPlace}.</p>
-
-    <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
-    <ul class="list-group">
-      <li class="list-group-item">My GitHub username is ${answers.github}</li>
-      <li class="list-group-item">LinkedIn: ${answers.linkedin}</li>
-    </ul>
-  </div>
-</div>
-</body>
-</html>`;
-
 inquirer
   .prompt([
     {
@@ -35,31 +8,142 @@ inquirer
       name: 'name',
       message: 'What is the name of the application?',
     },
-    {
+     {
       type: 'input',
-      name: 'purpose',
+      name: 'description',
       message: 'What is the purpose of the application?',
     },
+
     {
       type: 'input',
       name: 'instructions',
       message: 'How is the applicaton used?',
     },
+  
+    {
+      type: 'input',
+      name: 'credit',
+      message: 'Who is credited?',
+    },
+
+    {
+      type: "checkbox",
+      name: "license",
+      message: "Choose your license type:",
+      choices: [
+        "Apache License v2.0",
+      "GNU General Public LIcense v3.0",
+      "MIT License", "N/A"],
+    },
+
     {
       type: 'input',
       name: 'issues',
-      message: 'How to report issues',
+      message: 'How to report issues?',
     },
+
+    {
+      type: 'input',
+      name: 'linkedin',
+      message: 'What is your LinkedIn address?',
+    },
+
+    {
+      type: 'input',
+      name: 'email',
+      message: 'What is your email address?',
+    },
+
     {
       type: 'input',
       name: 'contributions',
-      message: 'How to make a contribution.',
+      message: 'How to make a contribution?',
     },
-  ])
-  .then((answers) => {
-    const htmlPageContent = generateHTML(answers);
+  ]
 
-    fs.writeFile('index.html', htmlPageContent, (err) =>
-      err ? console.log(err) : console.log('Successfully created index.html!')
-    );
-  });
+  ).then(( {
+    title,
+    installation,
+    instructions,
+    credit,
+    license,
+    linkedin,
+    email,
+    contribution
+  })=>
+  {
+
+    const template = `# ${title}
+    
+    *[Installation](#installation)
+    *[Usage](#usage)
+    *[Contribution](#contribution)
+    *[Credit](#credit)
+    *[License](#license)
+    #Installation
+    ${installation}
+    ##Usage
+    ${usage}
+    ##Contribution
+    ${contribution}
+    ##Instructions
+    ${instructions}
+    ##Credits
+    ${credit}
+    ##License
+    ${license}
+
+    #Contact
+    *Github: ${git}
+    *LinkedIn: ${linkedin}
+    *Email: ${email}`;
+
+
+createNewFile (title, template);
+});
+
+function createNewFile(fileName, data){
+    fs.writeFile(`./${fileName.toLowerCase().split(' '), join('')}.md` , data,) 
+   if(err){
+      console.log(err)
+    }
+    console.log(`Your README file has been generated!`);
+
+  }
+      
+
+  
+
+
+  // function generateMarkdown(data) {
+  //   return `${ answers.name }
+  
+  // ## Description
+  // ${ answers.description}
+  
+  
+  // ## Installation
+  
+  
+  // ## Usage
+  
+  
+  // ## Contributing
+  
+  
+  // ## License
+  // ${ answers.license }`
+  // ;}
+  
+
+  
+
+  // .then((answers) => {
+  //   const readmeContent = generateMarkdown(answers);
+
+  //   fs.writeFile('README.md', readmeContent, (err) =>
+  //     err ? console.log(err) : console.log('Successfully created README.md!')
+  //   );
+  // });
+
+  // module.exports = generateMarkdown;
