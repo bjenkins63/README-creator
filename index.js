@@ -1,149 +1,113 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const util = require('util');
 
-inquirer
-  .prompt([
+const writeFileAsync = util.promisify(fs.writeFile);
+
+const promptUser = () => {
+  return inquirer.prompt([
     {
       type: 'input',
       name: 'name',
-      message: 'What is the name of the application?',
-    },
-     {
+      message: 'What is the name of your project?',},
+    {
       type: 'input',
       name: 'description',
-      message: 'What is the purpose of the application?',
-    },
-
+      message: 'Supply a description of your application?',},
     {
       type: 'input',
-      name: 'instructions',
-      message: 'How is the applicaton used?',
-    },
-  
+      name: 'installation',
+      message: 'How is the applicaton installed?',},
     {
       type: 'input',
-      name: 'credit',
-      message: 'Who is credited?',
-    },
-
+      name: 'usage',
+      message: 'How is the application used?',},
+    
     {
-      type: "checkbox",
+      type: "list",
       name: "license",
       message: "Choose your license type:",
       choices: [
         "Apache License v2.0",
-      "GNU General Public LIcense v3.0",
-      "MIT License", "N/A"],
-    },
-
+        "GNU General Public LIcense v3.0",
+        "MIT License",
+        "N/A"],},
     {
       type: 'input',
-      name: 'issues',
-      message: 'How to report issues?',
-    },
-
+      name: 'contributing',
+      message: 'How to contribute?',},
     {
       type: 'input',
-      name: 'linkedin',
-      message: 'What is your LinkedIn address?',
-    },
-
+      name: 'tests',
+      message: 'Have there been any tests? please list.',},
+    {
+      type: 'input',
+      name: 'git',
+      message: 'what is your Github address?',},
     {
       type: 'input',
       name: 'email',
-      message: 'What is your email address?',
-    },
-
-    {
-      type: 'input',
-      name: 'contributions',
-      message: 'How to make a contribution?',
-    },
-  ]
-
-  ).then(( {
-    title,
-    installation,
-    instructions,
-    credit,
-    license,
-    linkedin,
-    email,
-    contribution
-  })=>
-  {
-
-    const template = `# ${title}
+      message: 'What is your email address?',},
     
-    *[Installation](#installation)
-    *[Usage](#usage)
-    *[Contribution](#contribution)
-    *[Credit](#credit)
-    *[License](#license)
-    #Installation
-    ${installation}
-    ##Usage
-    ${usage}
-    ##Contribution
-    ${contribution}
-    ##Instructions
-    ${instructions}
-    ##Credits
-    ${credit}
-    ##License
-    ${license}
+  ]);
+};
 
-    #Contact
-    *Github: ${git}
-    *LinkedIn: ${linkedin}
-    *Email: ${email}`;
+const generateReadme = (answers) =>
+
+`# ${answers.name}
+
+## Description
+${answers.description}
+
+![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
 
 
-createNewFile (title, template);
-});
+## Table of Contents
 
-function createNewFile(fileName, data){
-    fs.writeFile(`./${fileName.toLowerCase().split(' '), join('')}.md` , data,) 
-   if(err){
-      console.log(err)
-    }
-    console.log(`Your README file has been generated!`);
+* [Installation](#installation)
 
-  }
-      
+* [Usage](#usage)
 
-  
+* [License](#license)
+
+* [Contributing](#contributing)
+
+* [Tests](#tests)
+
+* [Github](#git)
+
+* [Email](#email)
 
 
-  // function generateMarkdown(data) {
-  //   return `${ answers.name }
-  
-  // ## Description
-  // ${ answers.description}
-  
-  
-  // ## Installation
-  
-  
-  // ## Usage
-  
-  
-  // ## Contributing
-  
-  
-  // ## License
-  // ${ answers.license }`
-  // ;}
-  
 
-  
 
-  // .then((answers) => {
-  //   const readmeContent = generateMarkdown(answers);
+-----------
 
-  //   fs.writeFile('README.md', readmeContent, (err) =>
-  //     err ? console.log(err) : console.log('Successfully created README.md!')
-  //   );
-  // });
+## Installation
+${answers.installation}
 
-  // module.exports = generateMarkdown;
+## Usage
+${answers.usage}
+
+## License
+${answers.license}
+
+## Contribute
+${answers.contributing}
+
+# Questions?
+*********
+
+* [Github]${answers.git}
+
+* [Email]mailto:${answers.email}`;
+
+
+const init =()=>{
+      promptUser()
+      .then((answers) => writeFileAsync(`${answers.name}.md`, generateReadme(answers)))
+      .then(() => console.log('Successfully wrote to README.md'))
+      .catch((err) => console.error(err));
+    };
+
+    init();
