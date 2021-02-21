@@ -59,8 +59,7 @@ const generateReadme = (answers) =>
 ## Description
 ${answers.description}
 
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-
+______
 
 ## Table of Contents
 
@@ -79,21 +78,28 @@ ${answers.description}
 * [Email](#email)
 
 
-
-
 -----------
 
 ## Installation
 ${answers.installation}
 
+___________
+
 ## Usage
 ${answers.usage}
+
+___________
 
 ## License
 ${answers.license}
 
+___________
+
 ## Contributing
 ${answers.contributing}
+
+___________
+
 
 # Questions?
 *********
