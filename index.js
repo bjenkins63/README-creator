@@ -73,9 +73,7 @@ ______
 
 * [Tests](#tests)
 
-* [Github](#git)
-
-* [Email](#email)
+* [Questions?](#questions)
 
 
 -----------
@@ -97,9 +95,11 @@ ___________
 
 ## Contributing
 ${answers.contributing}
-
 ___________
 
+## Tests
+${answers.tests}
+___________
 
 # Questions?
 *********

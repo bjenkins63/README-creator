@@ -15,14 +15,7 @@ Generate a solid README file by answering questions related to your project from
 
 * [Contributing](#contributing)
 
-* [Tests](#tests)
-
-* [Github](#git)
-
-* [Email](#email)
-
-
-
+* [Contact](#contact)
 
 -----------
 
@@ -60,12 +53,12 @@ _________
 MIT License - ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 _________
 
-## Contribute
+## Contributing
 Inquiries can be sent to me at my email address below.
 
-# Questions?
+# Contact
 *********
 
-* [Github]https://github.com/bjenkins63
+* Github[Github]https://github.com/bjenkins63
 
-* [Email]mailto:studiojenkins@yahoo.com
+* Email[Email]mailto:studiojenkins@yahoo.com
