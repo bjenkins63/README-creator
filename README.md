@@ -40,7 +40,7 @@ _________
 _________
 ## Instruction Video
 
-* https://drive.google.com/file/d/1qgP3KvQW8N9xV1t-nfGh5ZIjmoNt4lzv/view?usp=sharing
+* https://drive.google.com/file/d/1-Qfm8qInrpezeEgUc9ecCpcxKZ9q_HRW/view
 
 _________
 
