@@ -28,10 +28,10 @@ const promptUser = () => {
       name: "license",
       message: "Choose your license type:",
       choices: [
-        "Apache License v2.0",
-        "GNU General Public LIcense v3.0",
-        "MIT License",
-        "N/A"],},
+        `Apache License v2.0 - ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)`,
+        `GNU General Public LIcense v3.0" - ![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)`,
+        `MIT License - ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`,
+        `Mozilla Public License 2.0 - ![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)`],},
     {
       type: 'input',
       name: 'contributing',
