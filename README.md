@@ -3,7 +3,6 @@
 ## Description
 Generate a solid README file by answering questions related to your project from the command line.
 
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
 
 
 ## Table of Contents
@@ -28,7 +27,7 @@ Generate a solid README file by answering questions related to your project from
 -----------
 
 ## Installation
-Make sure node.js is installed on your computer. Clone directory from the repo. From directory within the terminal, initialize npm by typing npm init -y. Create a .gitignore file and add node_modules directory. Type: npm install inquirer. You will be prompted for questions after that.
+Make sure node.js is installed on your computer. Clone directory from the repo. From directory within the terminal, initialize npm by typing npm init -y. Create a .gitignore file and add node_modules to the list directory. Type: npm install inquirer. You will be prompted for questions after that.
 
 _________
 
@@ -46,12 +45,20 @@ _________
 ![](README_2.png)
 
 _________
+## Instruction Video
+
+* https://drive.google.com/file/d/1qgP3KvQW8N9xV1t-nfGh5ZIjmoNt4lzv/view?usp=sharing
+
+_________
 
 ## Usage
 Answers are prompted and fed into the process to be formatted into a .md file which is produced and placed in the project file.
 
+_________
+
 ## License
-MIT License
+MIT License - ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+_________
 
 ## Contribute
 Inquiries can be sent to me at my email address below.
