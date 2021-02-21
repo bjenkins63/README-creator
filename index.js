@@ -92,7 +92,7 @@ ${answers.usage}
 ## License
 ${answers.license}
 
-## Contribute
+## Contributing
 ${answers.contributing}
 
 # Questions?
