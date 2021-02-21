@@ -1,7 +1,7 @@
-# README Creator
+# README creator
 
 ## Description
-User supplies answers to questions regarding their project (i.e. description, title) and once complete a README file with the name of their project as the title is generated.
+Generate a solid README file by answering questions related to your project from the command line.
 
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
 
@@ -28,16 +28,33 @@ User supplies answers to questions regarding their project (i.e. description, ti
 -----------
 
 ## Installation
-Clone repo to your machine, install inquirer and then run the program.
+Make sure node.js is installed on your computer. Clone directory from the repo. From directory within the terminal, initialize npm by typing npm init -y. Create a .gitignore file and add node_modules directory. Type: npm install inquirer. You will be prompted for questions after that.
+
+_________
+
+## Screenshots
+
+![](README_1.png)
+
+**Above:**  *This shot displays how the questions are presented and answered.*
+
+
+**Below:** *This is the finished product, plaed into the project folder as a .md file.*
+
+_________
+
+![](README_2.png)
+
+_________
 
 ## Usage
-To easily generate a good starter README file for any project.
+Answers are prompted and fed into the process to be formatted into a .md file which is produced and placed in the project file.
 
 ## License
-
+MIT License
 
 ## Contribute
-Call or email for instructions.
+Inquiries can be sent to me at my email address below.
 
 # Questions?
 *********
